@@ -1,0 +1,36 @@
+# include  < stdio.h >
+
+int  main ()
+{
+  printf ( " Введите колво элемент масс \ н " );
+  int n;
+  int c;
+  int input;
+  scanf ( " % d " , & n);
+  int * arr = malloc ( sizeof ( int ) * n);
+  printf ( " Введите массив \ n " );
+  для ( int i = 0 ; i <n; i ++)
+  {
+      scanf ( " % d " , & input);
+      arr [i] = input;
+  }
+  поплавок факт = 1,2473309 ;
+  int step = n - 1 ;
+  while (step> = 1 )
+  {
+      для ( int i = 0 ; i + step <n; i ++)
+      {
+          if (arr [i]> arr [i + step])
+          {
+              с = обр [I];
+              обр [я] = обр [I + шаг];
+              обр [I + шаг] = с;
+          }
+          шаг / = Fakt;
+      }
+  }
+  для ( int i = 0 ; i <n; i ++)
+  {
+      printf ( " % d  " , arr [i]);
+  }
+}

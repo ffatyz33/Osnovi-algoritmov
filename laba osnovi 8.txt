@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+	int i, j, b;
+	int const k = 6;
+	int a[k];
+
+	printf("Vvedite massiv");
+	for (i = 0; i < k; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	int min = a[0];
+	int min_key = 0;
+
+	for (i = 0; i < k; i++)
+	{
+		for (j = i + 1; j < k; j++)
+		{
+			if (a[j] < min)
+			{
+				min_key = j;
+				min = a[j];
+			}
+		}
+		b = a[i];
+		a[i] = a[min_key];
+		a[min_key] = b;
+		min = a[i + 1];
+		min_key = i + 1;
+	}
+
+	for (i = 0; i < k; i++)
+	{
+		printf("%d ", a[i]);
+	}
+
+	return 0;
+
+}
